@@ -22,7 +22,7 @@ public class BankingDbContext : DbContext
             .HasColumnType("decimal(18,2)");
 
         // Relaciones previamente configuradas
-        modelBuilder.Entity<Transaction>()
+       /* modelBuilder.Entity<Transaction>()
             .HasOne(t => t.BankAccountOrigin)
             .WithMany(b => b.TransaccionesOrigen)
             .HasForeignKey(t => t.BankAccountOriginId)
@@ -33,12 +33,12 @@ public class BankingDbContext : DbContext
             .WithMany(b => b.TransaccionesDestino)
             .HasForeignKey(t => t.BankAccountDestinationId)
             .OnDelete(DeleteBehavior.Restrict);
-
-        modelBuilder.Entity<Customer>()
+       
+        modelBuilder.Entity<Customer>()z
             .HasMany(c => c.BankAccounts)
             .WithOne(b => b.Customer)
             .HasForeignKey(b => b.CustomerId);
-
+       */
         base.OnModelCreating(modelBuilder);
     }
 

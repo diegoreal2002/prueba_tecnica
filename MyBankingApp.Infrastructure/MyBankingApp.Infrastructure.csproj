@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyBankingApp.Application\MyBankingApp.Application.csproj" />
     <ProjectReference Include="..\MyBankingApp.Domain\MyBankingApp.Domain.csproj" />
   </ItemGroup>
 

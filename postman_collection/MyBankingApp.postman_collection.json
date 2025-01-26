@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "bdf871ba-fac0-4db2-9549-5c9d6d128d9b",
+		"name": "MyBankingApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24093279"
+	},
+	"item": [
+		{
+			"name": "Create withdraw transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bankAccountId\": 1,\r\n  \"amount\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/transactions/withdraw",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"transactions",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create deposit transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bankAccountId\": 1,\r\n  \"amount\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/transactions/deposit",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"transactions",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create transfer transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fromAccountId\": 1,\r\n  \"toAccountId\": 2,\r\n  \"amount\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/transactions/transfer",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"transactions",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit transaction",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Hola Mundo #3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/Transactions/{id}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Transactions",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/Transactions/{id}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Transactions",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Transactions with BankAccountId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7256/api/Transactions/{BankAccountId}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Transactions",
+						"{BankAccountId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get BankAccounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7256/api/BankAccounts",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"BankAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create BankAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 3,\r\n  \"accountNumber\": \"string\",\r\n  \"balance\": 0,\r\n  \"createdAt\": \"2025-01-26T14:25:13.498Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/BankAccounts",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"BankAccounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit BankAccount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 0,\r\n  \"accountNumber\": \"prueba editado #2\",\r\n  \"balance\": 1000,\r\n  \"createdAt\": \"2025-01-26T15:15:21.163Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/BankAccounts/{id}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"BankAccounts",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete BankAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/BankAccounts/{id}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"BankAccounts",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7256/api/Customers",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Daniel Suarez\",\r\n  \"email\": \"notiene@gmail.com\",\r\n  \"phone\": \"\",\r\n  \"createdAt\": \"2025-01-26T15:35:45.586Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/Customers",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Diego Ramiro edited\",\r\n  \"email\": \"diegoreal2002@gmail.com\",\r\n  \"phone\": \"3108171551\",\r\n  \"createdAt\": \"2025-01-26T15:38:31.047Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/Customers/{id}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Customers",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7256/api/Customers/{id}",
+					"host": [
+						"localhost"
+					],
+					"port": "7256",
+					"path": [
+						"api",
+						"Customers",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

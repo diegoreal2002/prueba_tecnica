@@ -8,6 +8,6 @@
         public string? Phone { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public ICollection<BankAccount> BankAccounts { get; set; }
+        //public ICollection<BankAccount> BankAccounts { get; set; }
     }
 }
