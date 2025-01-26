@@ -48,10 +48,9 @@ The project follows a layered architecture and clean design principles, organize
 ---
 
 ## **Deliverables**
-- **Database ER Model (MER):** [Pending location](#)
-- **SQL Script for the database:** [Pending location](#)
-- **Visual Studio Project:** [Pending location](#)
-- **Postman Collection with test requests:** [Pending location](#)
+- **Database ER Model (MER):** https://github.com/diegoreal2002/prueba_tecnica/blob/dev/MER/MER.drawio.png
+- **SQL Script for the database:** https://github.com/diegoreal2002/prueba_tecnica/blob/dev/script/script.sql
+- **Postman Collection with test requests:** https://github.com/diegoreal2002/prueba_tecnica/blob/dev/postman_collection/MyBankingApp.postman_collection.json
 - **Logs file (txt) from generated tests:** [Pending location](#)
 
 ---
