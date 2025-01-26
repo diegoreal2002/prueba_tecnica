@@ -39,6 +39,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<MyBankingApp.API.Middlewares.RequestResponseLoggingMiddleware>();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

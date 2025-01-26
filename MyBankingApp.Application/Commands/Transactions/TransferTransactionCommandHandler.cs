@@ -15,33 +15,37 @@ public class TransferTransactionCommandHandler : IRequestHandler<TransferTransac
 
     public async Task<bool> Handle(TransferTransactionCommand request, CancellationToken cancellationToken)
     {
+        // Obtener las cuentas bancarias
         var fromAccount = await _bankAccountRepository.GetByIdAsync(request.FromAccountId);
         var toAccount = await _bankAccountRepository.GetByIdAsync(request.ToAccountId);
 
-        if (fromAccount == null || toAccount == null || fromAccount.Balance < request.Amount)
+        // Validar que las cuentas existan
+        if (fromAccount == null || toAccount == null)
             return false;
 
+        // Validar fondos suficientes en la cuenta de origen
+        if (fromAccount.Balance < request.Amount)
+            return false;
+
+        // Actualizar balances
         fromAccount.Balance -= request.Amount;
         toAccount.Balance += request.Amount;
 
         await _bankAccountRepository.UpdateAsync(fromAccount);
         await _bankAccountRepository.UpdateAsync(toAccount);
 
-        await _transactionRepository.AddAsync(new Transaction
+        // Registrar la transacción
+        var transfer = new Transaction
         {
             BankAccountOriginId = fromAccount.BankAccountId,
+            BankAccountDestinationId = toAccount.BankAccountId,
             Amount = -request.Amount,
             Type = "Transfer",
             TransactionDate = DateTime.UtcNow
-        });
+        };
 
-        await _transactionRepository.AddAsync(new Transaction
-        {
-            BankAccountDestinationId = toAccount.BankAccountId,
-            Amount = request.Amount,
-            Type = "Transfer",
-            TransactionDate = DateTime.UtcNow
-        });
+
+        await _transactionRepository.AddAsync(transfer);
 
         return true;
     }

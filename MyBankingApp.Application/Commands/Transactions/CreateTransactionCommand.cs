@@ -6,6 +6,6 @@ namespace MyBankingApp.Application.Commands.Transactions
     {
         public int BankAccountId { get; set; }
         public decimal Amount { get; set; }
-        public string TransactionType { get; set; } // Withdrawal, Deposit, Transfer
+        public string? TransactionType { get; set; } // Withdrawal, Deposit, Transfer
     }
 }

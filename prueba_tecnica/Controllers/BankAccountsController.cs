@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using MyBankingApp.Application.Commands.Transactions;
 using MyBankingApp.Application.Interfaces;
 using MyBankingApp.Domain.Entities;
 
@@ -8,6 +10,7 @@ namespace MyBankingApp.API.Controllers
     [Route("api/[controller]")]
     public class BankAccountsController : ControllerBase
     {
+        private readonly IMediator _mediator;
         private readonly IBankAccountRepository _bankAccountRepository;
 
         public BankAccountsController(IBankAccountRepository bankAccountRepository)
@@ -58,6 +61,7 @@ namespace MyBankingApp.API.Controllers
             var account = await _bankAccountRepository.GetByIdAsync(id);
             if (account == null)
                 return NotFound();
+
 
             await _bankAccountRepository.DeleteAsync(id);
             return NoContent();
