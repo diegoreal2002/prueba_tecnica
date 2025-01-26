@@ -8,8 +8,8 @@
         public decimal Balance { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public Customer Customer { get; set; }
-        public ICollection<Transaction> TransaccionesOrigen { get; set; }
-        public ICollection<Transaction> TransaccionesDestino { get; set; }
+        //public Customer Customer { get; set; }
+        //public ICollection<Transaction> TransaccionesOrigen { get; set; }
+        //public ICollection<Transaction> TransaccionesDestino { get; set; }
     }
 }

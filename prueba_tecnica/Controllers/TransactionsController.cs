@@ -14,19 +14,47 @@ public class TransactionsController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateTransaction(CreateTransactionCommand command)
-    {
-        var result = await _mediator.Send(command);
-        if (result) return Ok("Transaction processed successfully.");
-        return BadRequest("Failed to process transaction.");
-    }
-
     [HttpGet("{bankAccountId}")]
     public async Task<IActionResult> GetTransactions(int bankAccountId)
     {
         var query = new GetTransactionsQuery { BankAccountId = bankAccountId };
         var result = await _mediator.Send(query);
         return Ok(result);
+    }
+
+    [HttpPost("withdraw")]
+    public async Task<IActionResult> Withdraw([FromBody] CreateTransactionCommand command)
+    {
+        if (command.TransactionType != "Withdrawal")
+            return BadRequest("TransactionType must be 'Withdrawal'.");
+
+        var result = await _mediator.Send(command);
+        if (!result)
+            return BadRequest("Insufficient funds or invalid account.");
+
+        return Ok("Withdrawal completed successfully.");
+    }
+
+    [HttpPost("deposit")]
+    public async Task<IActionResult> Deposit([FromBody] CreateTransactionCommand command)
+    {
+        if (command.TransactionType != "Deposit")
+            return BadRequest("TransactionType must be 'Deposit'.");
+
+        var result = await _mediator.Send(command);
+        if (!result)
+            return BadRequest("Failed to process deposit.");
+
+        return Ok("Deposit completed successfully.");
+    }
+
+    [HttpPost("transfer")]
+    public async Task<IActionResult> Transfer([FromBody] TransferTransactionCommand command)
+    {
+        var result = await _mediator.Send(command);
+        if (!result)
+            return BadRequest("Transfer failed. Insufficient funds or invalid accounts.");
+
+        return Ok("Transfer completed successfully.");
     }
 }
