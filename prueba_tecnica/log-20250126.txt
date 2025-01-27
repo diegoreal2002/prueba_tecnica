@@ -1,0 +1,375 @@
+2025-01-26 20:33:07.876 -05:00 [INF] Now listening on: http://localhost:7256
+2025-01-26 20:33:07.948 -05:00 [INF] Now listening on: http://localhost:5100
+2025-01-26 20:33:08.234 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-26 20:33:08.237 -05:00 [INF] Hosting environment: Development
+2025-01-26 20:33:08.239 -05:00 [INF] Content root path: C:\Users\diego\source\repos\prueba_tecnica\prueba_tecnica
+2025-01-26 20:33:08.733 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/swagger/index.html - null null
+2025-01-26 20:33:09.170 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/swagger/index.html - 200 null text/html;charset=utf-8 451.9618ms
+2025-01-26 20:33:09.217 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-26 20:33:09.226 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/_vs/browserLink - null null
+2025-01-26 20:33:09.229 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 11.8772ms
+2025-01-26 20:33:09.292 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.7109ms
+2025-01-26 20:33:09.385 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/swagger/v1/swagger.json - null null
+2025-01-26 20:33:09.412 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.2046ms
+2025-01-26 20:34:24.309 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:7256/api/Customers - application/json 129
+2025-01-26 20:34:24.343 -05:00 [INF] HTTP Request: POST /api/Customers {
+  "name": "Usuario Prueba",
+  "email": "prueba@gmail.com",
+  "phone": "3100567894",
+  "createdAt": "2025-01-27T01:33:50.785Z"
+}
+2025-01-26 20:34:24.365 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-01-26 20:34:24.379 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.CustomersController.Create (prueba_tecnica)'
+2025-01-26 20:34:24.460 -05:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(MyBankingApp.Domain.Entities.Customer) on controller MyBankingApp.API.Controllers.CustomersController (prueba_tecnica).
+2025-01-26 20:34:27.220 -05:00 [INF] Executed DbCommand (109ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CreatedAt], [Email], [Name], [Phone])
+OUTPUT INSERTED.[CustomerId]
+VALUES (@p0, @p1, @p2, @p3);
+2025-01-26 20:34:27.325 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'MyBankingApp.Domain.Entities.Customer'.
+2025-01-26 20:34:27.370 -05:00 [INF] Executed action MyBankingApp.API.Controllers.CustomersController.Create (prueba_tecnica) in 2897.9126ms
+2025-01-26 20:34:27.374 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.CustomersController.Create (prueba_tecnica)'
+2025-01-26 20:34:27.378 -05:00 [INF] HTTP Response: 201 {"customerId":9,"name":"Usuario Prueba","email":"prueba@gmail.com","phone":"3100567894","createdAt":"2025-01-27T01:33:50.785Z"}
+2025-01-26 20:34:27.397 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:7256/api/Customers - 201 null application/json; charset=utf-8 3088.5957ms
+2025-01-26 20:34:41.739 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/Customers - null null
+2025-01-26 20:34:41.747 -05:00 [INF] HTTP Request: GET /api/Customers 
+2025-01-26 20:34:41.751 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.CustomersController.GetAll (prueba_tecnica)'
+2025-01-26 20:34:41.771 -05:00 [INF] Route matched with {action = "GetAll", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller MyBankingApp.API.Controllers.CustomersController (prueba_tecnica).
+2025-01-26 20:34:42.318 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerId], [c].[CreatedAt], [c].[Email], [c].[Name], [c].[Phone]
+FROM [Customers] AS [c]
+2025-01-26 20:34:42.345 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyBankingApp.Domain.Entities.Customer, MyBankingApp.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-26 20:34:42.353 -05:00 [INF] Executed action MyBankingApp.API.Controllers.CustomersController.GetAll (prueba_tecnica) in 577.7932ms
+2025-01-26 20:34:42.356 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.CustomersController.GetAll (prueba_tecnica)'
+2025-01-26 20:34:42.360 -05:00 [INF] HTTP Response: 200 [{"customerId":2,"name":"Diego Ramiro edited","email":"diegoreal2002@gmail.com","phone":"3108171551","createdAt":"2025-01-25T00:00:00"},{"customerId":3,"name":"Pepito Perez","email":"pepitoperez@gmail.com","phone":"3123456789","createdAt":"2025-01-01T00:00:00"},{"customerId":5,"name":"Alejandro Rau","email":"notiene@gmail.com","phone":"3133333456","createdAt":"2025-01-26T15:35:45.586"},{"customerId":7,"name":"Pepito Perez","email":"pepitoperez@gmail.com","phone":"3123456789","createdAt":"2025-01-01T00:00:00"},{"customerId":8,"name":"Pepito Perez","email":"pepitoperez@gmail.com","phone":"3123456789","createdAt":"2025-01-01T00:00:00"},{"customerId":9,"name":"Usuario Prueba","email":"prueba@gmail.com","phone":"3100567894","createdAt":"2025-01-27T01:33:50.785"}]
+2025-01-26 20:34:42.370 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/Customers - 200 null application/json; charset=utf-8 631.802ms
+2025-01-26 20:34:54.880 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/Customers/9 - null null
+2025-01-26 20:34:54.886 -05:00 [INF] HTTP Request: GET /api/Customers/9 
+2025-01-26 20:34:54.894 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.CustomersController.GetById (prueba_tecnica)'
+2025-01-26 20:34:54.910 -05:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller MyBankingApp.API.Controllers.CustomersController (prueba_tecnica).
+2025-01-26 20:34:55.175 -05:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerId], [c].[CreatedAt], [c].[Email], [c].[Name], [c].[Phone]
+FROM [Customers] AS [c]
+WHERE [c].[CustomerId] = @__p_0
+2025-01-26 20:34:55.188 -05:00 [INF] Executing OkObjectResult, writing value of type 'MyBankingApp.Domain.Entities.Customer'.
+2025-01-26 20:34:55.192 -05:00 [INF] Executed action MyBankingApp.API.Controllers.CustomersController.GetById (prueba_tecnica) in 277.7861ms
+2025-01-26 20:34:55.196 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.CustomersController.GetById (prueba_tecnica)'
+2025-01-26 20:34:55.199 -05:00 [INF] HTTP Response: 200 {"customerId":9,"name":"Usuario Prueba","email":"prueba@gmail.com","phone":"3100567894","createdAt":"2025-01-27T01:33:50.785"}
+2025-01-26 20:34:55.204 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/Customers/9 - 200 null application/json; charset=utf-8 324.1227ms
+2025-01-26 20:35:35.683 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:7256/api/Customers/9 - application/json 137
+2025-01-26 20:35:35.698 -05:00 [INF] HTTP Request: PUT /api/Customers/9 {
+  "name": "Usuario Prueba editado",
+  "email": "prueba@gmail.com",
+  "phone": "3100000000",
+  "createdAt": "2025-01-27T01:35:05.704Z"
+}
+2025-01-26 20:35:35.702 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.CustomersController.Update (prueba_tecnica)'
+2025-01-26 20:35:35.711 -05:00 [INF] Route matched with {action = "Update", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, MyBankingApp.Domain.Entities.Customer) on controller MyBankingApp.API.Controllers.CustomersController (prueba_tecnica).
+2025-01-26 20:35:35.743 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerId], [c].[CreatedAt], [c].[Email], [c].[Name], [c].[Phone]
+FROM [Customers] AS [c]
+WHERE [c].[CustomerId] = @__p_0
+2025-01-26 20:35:35.776 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Customers] SET [CreatedAt] = @p0, [Email] = @p1, [Name] = @p2, [Phone] = @p3
+OUTPUT 1
+WHERE [CustomerId] = @p4;
+2025-01-26 20:35:35.796 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-26 20:35:35.798 -05:00 [INF] Executed action MyBankingApp.API.Controllers.CustomersController.Update (prueba_tecnica) in 82.6865ms
+2025-01-26 20:35:35.803 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.CustomersController.Update (prueba_tecnica)'
+2025-01-26 20:35:35.806 -05:00 [INF] HTTP Response: 204 
+2025-01-26 20:35:35.811 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:7256/api/Customers/9 - 204 null null 129.1833ms
+2025-01-26 20:35:45.945 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/Customers/9 - null null
+2025-01-26 20:35:45.951 -05:00 [INF] HTTP Request: GET /api/Customers/9 
+2025-01-26 20:35:45.954 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.CustomersController.GetById (prueba_tecnica)'
+2025-01-26 20:35:45.958 -05:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller MyBankingApp.API.Controllers.CustomersController (prueba_tecnica).
+2025-01-26 20:35:45.969 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerId], [c].[CreatedAt], [c].[Email], [c].[Name], [c].[Phone]
+FROM [Customers] AS [c]
+WHERE [c].[CustomerId] = @__p_0
+2025-01-26 20:35:45.978 -05:00 [INF] Executing OkObjectResult, writing value of type 'MyBankingApp.Domain.Entities.Customer'.
+2025-01-26 20:35:45.982 -05:00 [INF] Executed action MyBankingApp.API.Controllers.CustomersController.GetById (prueba_tecnica) in 17.6893ms
+2025-01-26 20:35:45.984 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.CustomersController.GetById (prueba_tecnica)'
+2025-01-26 20:35:45.986 -05:00 [INF] HTTP Response: 200 {"customerId":9,"name":"Usuario Prueba editado","email":"prueba@gmail.com","phone":"3100567894","createdAt":"2025-01-27T01:33:50.785"}
+2025-01-26 20:35:45.990 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/Customers/9 - 200 null application/json; charset=utf-8 45.2443ms
+2025-01-26 20:35:53.833 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:7256/api/Customers/9 - null null
+2025-01-26 20:35:53.839 -05:00 [INF] HTTP Request: DELETE /api/Customers/9 
+2025-01-26 20:35:53.842 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.CustomersController.Delete (prueba_tecnica)'
+2025-01-26 20:35:53.851 -05:00 [INF] Route matched with {action = "Delete", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller MyBankingApp.API.Controllers.CustomersController (prueba_tecnica).
+2025-01-26 20:35:53.868 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerId], [c].[CreatedAt], [c].[Email], [c].[Name], [c].[Phone]
+FROM [Customers] AS [c]
+WHERE [c].[CustomerId] = @__p_0
+2025-01-26 20:35:53.917 -05:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Customers]
+OUTPUT 1
+WHERE [CustomerId] = @p0;
+2025-01-26 20:35:53.932 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-26 20:35:53.935 -05:00 [INF] Executed action MyBankingApp.API.Controllers.CustomersController.Delete (prueba_tecnica) in 76.7897ms
+2025-01-26 20:35:53.941 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.CustomersController.Delete (prueba_tecnica)'
+2025-01-26 20:35:53.947 -05:00 [INF] HTTP Response: 204 
+2025-01-26 20:35:53.952 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:7256/api/Customers/9 - 204 null null 119.0297ms
+2025-01-26 20:36:06.668 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/BankAccounts - null null
+2025-01-26 20:36:06.673 -05:00 [INF] HTTP Request: GET /api/BankAccounts 
+2025-01-26 20:36:06.676 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.BankAccountsController.GetAll (prueba_tecnica)'
+2025-01-26 20:36:06.685 -05:00 [INF] Route matched with {action = "GetAll", controller = "BankAccounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller MyBankingApp.API.Controllers.BankAccountsController (prueba_tecnica).
+2025-01-26 20:36:06.720 -05:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+2025-01-26 20:36:06.758 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyBankingApp.Domain.Entities.BankAccount, MyBankingApp.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-26 20:36:06.776 -05:00 [INF] Executed action MyBankingApp.API.Controllers.BankAccountsController.GetAll (prueba_tecnica) in 86.4735ms
+2025-01-26 20:36:06.781 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.BankAccountsController.GetAll (prueba_tecnica)'
+2025-01-26 20:36:06.783 -05:00 [INF] HTTP Response: 200 [{"bankAccountId":1,"customerId":2,"accountNumber":"prueba editado #2","balance":444.00,"createdAt":"2025-01-25T00:00:00"},{"bankAccountId":2,"customerId":3,"accountNumber":"123456","balance":150.00,"createdAt":"2025-05-01T00:00:00"},{"bankAccountId":6,"customerId":3,"accountNumber":"123456","balance":10000.00,"createdAt":"2025-05-01T00:00:00"}]
+2025-01-26 20:36:06.787 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/BankAccounts - 200 null application/json; charset=utf-8 119.4813ms
+2025-01-26 20:36:49.070 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/BankAccounts/6 - null null
+2025-01-26 20:36:49.087 -05:00 [INF] HTTP Request: GET /api/BankAccounts/6 
+2025-01-26 20:36:49.090 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.BankAccountsController.GetById (prueba_tecnica)'
+2025-01-26 20:36:49.099 -05:00 [INF] Route matched with {action = "GetById", controller = "BankAccounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int32) on controller MyBankingApp.API.Controllers.BankAccountsController (prueba_tecnica).
+2025-01-26 20:36:49.125 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:36:49.136 -05:00 [INF] Executing OkObjectResult, writing value of type 'MyBankingApp.Domain.Entities.BankAccount'.
+2025-01-26 20:36:49.139 -05:00 [INF] Executed action MyBankingApp.API.Controllers.BankAccountsController.GetById (prueba_tecnica) in 34.3999ms
+2025-01-26 20:36:49.142 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.BankAccountsController.GetById (prueba_tecnica)'
+2025-01-26 20:36:49.147 -05:00 [INF] HTTP Response: 200 {"bankAccountId":6,"customerId":3,"accountNumber":"123456","balance":10000.00,"createdAt":"2025-05-01T00:00:00"}
+2025-01-26 20:36:49.152 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/BankAccounts/6 - 200 null application/json; charset=utf-8 83.4263ms
+2025-01-26 20:37:24.972 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:7256/api/BankAccounts - application/json 109
+2025-01-26 20:37:24.986 -05:00 [INF] HTTP Request: POST /api/BankAccounts {
+  "customerId": 8,
+  "accountNumber": "121212",
+  "balance": 0,
+  "createdAt": "2025-01-27T01:37:11.810Z"
+}
+2025-01-26 20:37:24.990 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.BankAccountsController.Create (prueba_tecnica)'
+2025-01-26 20:37:24.998 -05:00 [INF] Route matched with {action = "Create", controller = "BankAccounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(MyBankingApp.Domain.Entities.BankAccount) on controller MyBankingApp.API.Controllers.BankAccountsController (prueba_tecnica).
+2025-01-26 20:37:25.080 -05:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BankAccounts] ([AccountNumber], [Balance], [CreatedAt], [CustomerId])
+OUTPUT INSERTED.[BankAccountId]
+VALUES (@p0, @p1, @p2, @p3);
+2025-01-26 20:37:25.089 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'MyBankingApp.Domain.Entities.BankAccount'.
+2025-01-26 20:37:25.092 -05:00 [INF] Executed action MyBankingApp.API.Controllers.BankAccountsController.Create (prueba_tecnica) in 89.6677ms
+2025-01-26 20:37:25.095 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.BankAccountsController.Create (prueba_tecnica)'
+2025-01-26 20:37:25.098 -05:00 [INF] HTTP Response: 201 {"bankAccountId":7,"customerId":8,"accountNumber":"121212","balance":0,"createdAt":"2025-01-27T01:37:11.81Z"}
+2025-01-26 20:37:25.101 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:7256/api/BankAccounts - 201 null application/json; charset=utf-8 133.4863ms
+2025-01-26 20:37:57.418 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:7256/api/BankAccounts/7 - application/json 90
+2025-01-26 20:37:57.430 -05:00 [INF] HTTP Request: PUT /api/BankAccounts/7 {
+  "accountNumber": "121200",
+  "balance": 0,
+  "createdAt": "2025-01-27T01:37:44.826Z"
+}
+2025-01-26 20:37:57.433 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.BankAccountsController.Update (prueba_tecnica)'
+2025-01-26 20:37:57.441 -05:00 [INF] Route matched with {action = "Update", controller = "BankAccounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, MyBankingApp.Domain.Entities.BankAccount) on controller MyBankingApp.API.Controllers.BankAccountsController (prueba_tecnica).
+2025-01-26 20:37:57.458 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:37:57.475 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [Balance] = @p1, [CreatedAt] = @p2, [CustomerId] = @p3
+OUTPUT 1
+WHERE [BankAccountId] = @p4;
+2025-01-26 20:37:57.483 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-26 20:37:57.485 -05:00 [INF] Executed action MyBankingApp.API.Controllers.BankAccountsController.Update (prueba_tecnica) in 40.1983ms
+2025-01-26 20:37:57.489 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.BankAccountsController.Update (prueba_tecnica)'
+2025-01-26 20:37:57.493 -05:00 [INF] HTTP Response: 204 
+2025-01-26 20:37:57.495 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:7256/api/BankAccounts/7 - 204 null null 111.434ms
+2025-01-26 20:38:05.084 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/BankAccounts - null null
+2025-01-26 20:38:05.090 -05:00 [INF] HTTP Request: GET /api/BankAccounts 
+2025-01-26 20:38:05.092 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.BankAccountsController.GetAll (prueba_tecnica)'
+2025-01-26 20:38:05.095 -05:00 [INF] Route matched with {action = "GetAll", controller = "BankAccounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller MyBankingApp.API.Controllers.BankAccountsController (prueba_tecnica).
+2025-01-26 20:38:05.107 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+2025-01-26 20:38:05.113 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyBankingApp.Domain.Entities.BankAccount, MyBankingApp.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-26 20:38:05.118 -05:00 [INF] Executed action MyBankingApp.API.Controllers.BankAccountsController.GetAll (prueba_tecnica) in 18.1497ms
+2025-01-26 20:38:05.121 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.BankAccountsController.GetAll (prueba_tecnica)'
+2025-01-26 20:38:05.123 -05:00 [INF] HTTP Response: 200 [{"bankAccountId":1,"customerId":2,"accountNumber":"prueba editado #2","balance":444.00,"createdAt":"2025-01-25T00:00:00"},{"bankAccountId":2,"customerId":3,"accountNumber":"123456","balance":150.00,"createdAt":"2025-05-01T00:00:00"},{"bankAccountId":6,"customerId":3,"accountNumber":"123456","balance":10000.00,"createdAt":"2025-05-01T00:00:00"},{"bankAccountId":7,"customerId":8,"accountNumber":"121200","balance":0.00,"createdAt":"2025-01-27T01:37:11.81"}]
+2025-01-26 20:38:05.126 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/BankAccounts - 200 null application/json; charset=utf-8 42.0403ms
+2025-01-26 20:38:16.032 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:7256/api/BankAccounts/7 - null null
+2025-01-26 20:38:16.038 -05:00 [INF] HTTP Request: DELETE /api/BankAccounts/7 
+2025-01-26 20:38:16.043 -05:00 [INF] Executing endpoint 'MyBankingApp.API.Controllers.BankAccountsController.Delete (prueba_tecnica)'
+2025-01-26 20:38:16.051 -05:00 [INF] Route matched with {action = "Delete", controller = "BankAccounts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller MyBankingApp.API.Controllers.BankAccountsController (prueba_tecnica).
+2025-01-26 20:38:16.073 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:38:16.096 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BankAccounts]
+OUTPUT 1
+WHERE [BankAccountId] = @p0;
+2025-01-26 20:38:16.103 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-26 20:38:16.106 -05:00 [INF] Executed action MyBankingApp.API.Controllers.BankAccountsController.Delete (prueba_tecnica) in 48.9791ms
+2025-01-26 20:38:16.110 -05:00 [INF] Executed endpoint 'MyBankingApp.API.Controllers.BankAccountsController.Delete (prueba_tecnica)'
+2025-01-26 20:38:16.113 -05:00 [INF] HTTP Response: 204 
+2025-01-26 20:38:16.116 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:7256/api/BankAccounts/7 - 204 null null 83.9053ms
+2025-01-26 20:39:41.689 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/Transactions/1 - null null
+2025-01-26 20:39:41.707 -05:00 [INF] HTTP Request: GET /api/Transactions/1 
+2025-01-26 20:39:41.710 -05:00 [INF] Executing endpoint 'TransactionsController.GetTransactions (prueba_tecnica)'
+2025-01-26 20:39:41.721 -05:00 [INF] Route matched with {action = "GetTransactions", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransactions(Int32) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:39:41.768 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TransactionId], [t].[Amount], [t].[BankAccountDestinationId], [t].[BankAccountOriginId], [t].[Description], [t].[TransactionDate], [t].[Type]
+FROM [Transactions] AS [t]
+2025-01-26 20:39:41.806 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyBankingApp.Domain.Entities.Transaction, MyBankingApp.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-26 20:39:41.823 -05:00 [INF] Executed action TransactionsController.GetTransactions (prueba_tecnica) in 91.1836ms
+2025-01-26 20:39:41.828 -05:00 [INF] Executed endpoint 'TransactionsController.GetTransactions (prueba_tecnica)'
+2025-01-26 20:39:41.835 -05:00 [INF] HTTP Response: 200 [{"transactionId":2,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":0.00,"type":"DEPOSITO","transactionDate":"2025-01-25T21:44:58.1379895","description":"Hola Mundo","bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":3,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Deposit","transactionDate":"2025-01-25T22:14:30.6466197","description":"Hola Mundo #3","bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":4,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":500.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:16:58.8357467","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":5,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":500.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:37:09.0199436","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":6,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":5.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:43:53.4436384","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":7,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":1.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:46:41.8075389","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":8,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":1.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:52:30.6023538","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":9,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:52:55.1157152","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":10,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":1.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:53:15.8212253","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":11,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Withdrawal","transactionDate":"2025-01-26T17:10:48.4315501","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":12,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Deposit","transactionDate":"2025-01-26T17:11:12.9700183","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":15,"bankAccountOriginId":6,"bankAccountDestinationId":null,"amount":10000.00,"type":"Deposit","transactionDate":"2025-01-26T19:30:45.870043","description":null,"bankAccountOrigin":null,"bankAccountDestination":null}]
+2025-01-26 20:39:41.881 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/Transactions/1 - 200 null application/json; charset=utf-8 193.4537ms
+2025-01-26 20:40:29.214 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:7256/api/Transactions/withdraw - application/json 41
+2025-01-26 20:40:29.230 -05:00 [INF] HTTP Request: POST /api/Transactions/withdraw {
+  "bankAccountId": 6,
+  "amount": 100
+}
+2025-01-26 20:40:29.234 -05:00 [INF] Executing endpoint 'TransactionsController.Withdraw (prueba_tecnica)'
+2025-01-26 20:40:29.241 -05:00 [INF] Route matched with {action = "Withdraw", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Withdraw(MyBankingApp.Application.Commands.Transactions.CreateTransactionCommand) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:40:29.281 -05:00 [INF] Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:40:29.301 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [Balance] = @p1, [CreatedAt] = @p2, [CustomerId] = @p3
+OUTPUT 1
+WHERE [BankAccountId] = @p4;
+2025-01-26 20:40:29.361 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Transactions] ([Amount], [BankAccountDestinationId], [BankAccountOriginId], [Description], [TransactionDate], [Type])
+OUTPUT INSERTED.[TransactionId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-01-26 20:40:29.375 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-01-26 20:40:29.378 -05:00 [INF] Executed action TransactionsController.Withdraw (prueba_tecnica) in 127.081ms
+2025-01-26 20:40:29.381 -05:00 [INF] Executed endpoint 'TransactionsController.Withdraw (prueba_tecnica)'
+2025-01-26 20:40:29.387 -05:00 [INF] HTTP Response: 200 Withdrawal completed successfully.
+2025-01-26 20:40:29.389 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:7256/api/Transactions/withdraw - 200 null text/plain; charset=utf-8 181.1389ms
+2025-01-26 20:40:47.063 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:7256/api/Transactions/6 - null null
+2025-01-26 20:40:47.096 -05:00 [INF] HTTP Request: GET /api/Transactions/6 
+2025-01-26 20:40:47.101 -05:00 [INF] Executing endpoint 'TransactionsController.GetTransactions (prueba_tecnica)'
+2025-01-26 20:40:47.104 -05:00 [INF] Route matched with {action = "GetTransactions", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTransactions(Int32) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:40:47.122 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TransactionId], [t].[Amount], [t].[BankAccountDestinationId], [t].[BankAccountOriginId], [t].[Description], [t].[TransactionDate], [t].[Type]
+FROM [Transactions] AS [t]
+2025-01-26 20:40:47.135 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyBankingApp.Domain.Entities.Transaction, MyBankingApp.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-26 20:40:47.139 -05:00 [INF] Executed action TransactionsController.GetTransactions (prueba_tecnica) in 23.943ms
+2025-01-26 20:40:47.145 -05:00 [INF] Executed endpoint 'TransactionsController.GetTransactions (prueba_tecnica)'
+2025-01-26 20:40:47.151 -05:00 [INF] HTTP Response: 200 [{"transactionId":2,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":0.00,"type":"DEPOSITO","transactionDate":"2025-01-25T21:44:58.1379895","description":"Hola Mundo","bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":3,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Deposit","transactionDate":"2025-01-25T22:14:30.6466197","description":"Hola Mundo #3","bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":4,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":500.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:16:58.8357467","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":5,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":500.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:37:09.0199436","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":6,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":5.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:43:53.4436384","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":7,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":1.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:46:41.8075389","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":8,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":1.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:52:30.6023538","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":9,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:52:55.1157152","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":10,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":1.00,"type":"Withdrawal","transactionDate":"2025-01-26T16:53:15.8212253","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":11,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Withdrawal","transactionDate":"2025-01-26T17:10:48.4315501","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":12,"bankAccountOriginId":1,"bankAccountDestinationId":null,"amount":100.00,"type":"Deposit","transactionDate":"2025-01-26T17:11:12.9700183","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":15,"bankAccountOriginId":6,"bankAccountDestinationId":null,"amount":10000.00,"type":"Deposit","transactionDate":"2025-01-26T19:30:45.870043","description":null,"bankAccountOrigin":null,"bankAccountDestination":null},{"transactionId":16,"bankAccountOriginId":6,"bankAccountDestinationId":null,"amount":100.00,"type":"Withdrawal","transactionDate":"2025-01-27T01:40:29.3139229","description":null,"bankAccountOrigin":null,"bankAccountDestination":null}]
+2025-01-26 20:40:47.206 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:7256/api/Transactions/6 - 200 null application/json; charset=utf-8 142.9821ms
+2025-01-26 20:41:10.666 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:7256/api/Transactions/deposit - application/json 42
+2025-01-26 20:41:10.701 -05:00 [INF] HTTP Request: POST /api/Transactions/deposit {
+  "bankAccountId": 6,
+  "amount": 2050
+}
+2025-01-26 20:41:10.712 -05:00 [INF] Executing endpoint 'TransactionsController.Deposit (prueba_tecnica)'
+2025-01-26 20:41:10.720 -05:00 [INF] Route matched with {action = "Deposit", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Deposit(MyBankingApp.Application.Commands.Transactions.CreateTransactionCommand) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:41:10.737 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:41:10.765 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [Balance] = @p1, [CreatedAt] = @p2, [CustomerId] = @p3
+OUTPUT 1
+WHERE [BankAccountId] = @p4;
+2025-01-26 20:41:10.794 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Transactions] ([Amount], [BankAccountDestinationId], [BankAccountOriginId], [Description], [TransactionDate], [Type])
+OUTPUT INSERTED.[TransactionId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-01-26 20:41:10.809 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-01-26 20:41:10.813 -05:00 [INF] Executed action TransactionsController.Deposit (prueba_tecnica) in 83.8083ms
+2025-01-26 20:41:10.821 -05:00 [INF] Executed endpoint 'TransactionsController.Deposit (prueba_tecnica)'
+2025-01-26 20:41:10.825 -05:00 [INF] HTTP Response: 200 Deposit completed successfully.
+2025-01-26 20:41:10.830 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:7256/api/Transactions/deposit - 200 null text/plain; charset=utf-8 164.6112ms
+2025-01-26 20:41:40.306 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:7256/api/Transactions/transfer - application/json 62
+2025-01-26 20:41:40.321 -05:00 [INF] HTTP Request: POST /api/Transactions/transfer {
+  "fromAccountId": 6,
+  "toAccountId": 2,
+  "amount": 1500
+}
+2025-01-26 20:41:40.327 -05:00 [INF] Executing endpoint 'TransactionsController.Transfer (prueba_tecnica)'
+2025-01-26 20:41:40.334 -05:00 [INF] Route matched with {action = "Transfer", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Transfer(TransferTransactionCommand) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:41:40.367 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:41:40.379 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BankAccountId], [b].[AccountNumber], [b].[Balance], [b].[CreatedAt], [b].[CustomerId]
+FROM [BankAccounts] AS [b]
+WHERE [b].[BankAccountId] = @__p_0
+2025-01-26 20:41:40.428 -05:00 [INF] Executed DbCommand (12ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p6='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [Balance] = @p0
+OUTPUT 1
+WHERE [BankAccountId] = @p1;
+UPDATE [BankAccounts] SET [AccountNumber] = @p2, [Balance] = @p3, [CreatedAt] = @p4, [CustomerId] = @p5
+OUTPUT 1
+WHERE [BankAccountId] = @p6;
+2025-01-26 20:41:40.476 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [Balance] = @p1, [CreatedAt] = @p2, [CustomerId] = @p3
+OUTPUT 1
+WHERE [BankAccountId] = @p4;
+2025-01-26 20:41:40.522 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Transactions] ([Amount], [BankAccountDestinationId], [BankAccountOriginId], [Description], [TransactionDate], [Type])
+OUTPUT INSERTED.[TransactionId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-01-26 20:41:40.541 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-01-26 20:41:40.547 -05:00 [INF] Executed action TransactionsController.Transfer (prueba_tecnica) in 202.8784ms
+2025-01-26 20:41:40.553 -05:00 [INF] Executed endpoint 'TransactionsController.Transfer (prueba_tecnica)'
+2025-01-26 20:41:40.561 -05:00 [INF] HTTP Response: 200 Transfer completed successfully.
+2025-01-26 20:41:40.565 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:7256/api/Transactions/transfer - 200 null text/plain; charset=utf-8 259.1201ms
+2025-01-26 20:42:13.669 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:7256/api/Transactions/16 - application/json 34
+2025-01-26 20:42:13.686 -05:00 [INF] HTTP Request: PUT /api/Transactions/16 {
+  "description": "editado #16"
+}
+2025-01-26 20:42:13.694 -05:00 [INF] Executing endpoint 'TransactionsController.UpdateTransaction (prueba_tecnica)'
+2025-01-26 20:42:13.703 -05:00 [INF] Route matched with {action = "UpdateTransaction", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTransaction(Int32, MyBankingApp.Application.Commands.Transactions.UpdateTransactionCommand) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:42:13.746 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TransactionId], [t].[Amount], [t].[BankAccountDestinationId], [t].[BankAccountOriginId], [t].[Description], [t].[TransactionDate], [t].[Type]
+FROM [Transactions] AS [t]
+WHERE [t].[TransactionId] = @__p_0
+2025-01-26 20:42:13.793 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Transactions] SET [Amount] = @p0, [BankAccountDestinationId] = @p1, [BankAccountOriginId] = @p2, [Description] = @p3, [TransactionDate] = @p4, [Type] = @p5
+OUTPUT 1
+WHERE [TransactionId] = @p6;
+2025-01-26 20:42:13.807 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-26 20:42:13.816 -05:00 [INF] Executed action TransactionsController.UpdateTransaction (prueba_tecnica) in 103.0533ms
+2025-01-26 20:42:13.821 -05:00 [INF] Executed endpoint 'TransactionsController.UpdateTransaction (prueba_tecnica)'
+2025-01-26 20:42:13.829 -05:00 [INF] HTTP Response: 204 
+2025-01-26 20:42:13.835 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:7256/api/Transactions/16 - 204 null null 165.7808ms
+2025-01-26 20:42:20.760 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:7256/api/Transactions/16 - null null
+2025-01-26 20:42:20.767 -05:00 [INF] HTTP Request: DELETE /api/Transactions/16 
+2025-01-26 20:42:20.774 -05:00 [INF] Executing endpoint 'TransactionsController.DeleteTransaction (prueba_tecnica)'
+2025-01-26 20:42:20.783 -05:00 [INF] Route matched with {action = "DeleteTransaction", controller = "Transactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteTransaction(Int32) on controller TransactionsController (prueba_tecnica).
+2025-01-26 20:42:20.801 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TransactionId], [t].[Amount], [t].[BankAccountDestinationId], [t].[BankAccountOriginId], [t].[Description], [t].[TransactionDate], [t].[Type]
+FROM [Transactions] AS [t]
+WHERE [t].[TransactionId] = @__p_0
+2025-01-26 20:42:20.823 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Transactions]
+OUTPUT 1
+WHERE [TransactionId] = @p0;
+2025-01-26 20:42:20.836 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-01-26 20:42:20.843 -05:00 [INF] Executed action TransactionsController.DeleteTransaction (prueba_tecnica) in 50.48ms
+2025-01-26 20:42:20.851 -05:00 [INF] Executed endpoint 'TransactionsController.DeleteTransaction (prueba_tecnica)'
+2025-01-26 20:42:20.860 -05:00 [INF] HTTP Response: 204 
+2025-01-26 20:42:20.872 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:7256/api/Transactions/16 - 204 null null 111.9698ms
