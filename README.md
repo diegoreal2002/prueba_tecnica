@@ -51,7 +51,7 @@ The project follows a layered architecture and clean design principles, organize
 - **Database ER Model (MER):** https://github.com/diegoreal2002/prueba_tecnica/blob/dev/MER/MER.drawio.png
 - **SQL Script for the database:** https://github.com/diegoreal2002/prueba_tecnica/blob/dev/script/script.sql
 - **Postman Collection with test requests:** https://github.com/diegoreal2002/prueba_tecnica/blob/dev/postman_collection/MyBankingApp.postman_collection.json
-- **Logs file (txt) from generated tests:** [Pending location](#)
+- **Logs file (txt) from generated tests:** https://github.com/diegoreal2002/prueba_tecnica/blob/master/prueba_tecnica/log-20250126.txt
 
 ---
 
